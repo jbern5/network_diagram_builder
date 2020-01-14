@@ -1,0 +1,11 @@
+ip,connections,zone,cati,version,data_center
+1.1.1.1,"0.0.0.0,2.2.2.2,3.3.3.3,9.9.9.9",lb,ICTO-0001,f5,
+2.2.2.2,"4.4.4.4,5.5.5.5",dmz,ICTO-0001,jap,pri
+3.3.3.3,"4.4.4.4,5.5.5.5",dmz,ICTO-0001,jap,pri
+4.4.4.4,,app,ICTO-0001,weblogic,pri
+5.5.5.5,,app,ICTO-0001,weblogic,pri
+6.6.6.6,,app,ICTO-0001,weblogic,clf
+7.7.7.7,,app,ICTO-0001,weblogic,clf
+8.8.8.8,,app,ICTO-0001,weblogic,clf
+9.9.9.9,"6.6.6.6,7.7.7.7,8.8.8.8",dmz,ICTO-0001,jap,clf
+0.0.0.0,"6.6.6.6,7.7.7.7,8.8.8.8",dmz,ICTO-0001,jap,clf
