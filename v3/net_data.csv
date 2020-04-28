@@ -1,6 +1,6 @@
 ip,connections,zone,cati,version,data_center
-1.1.1.1,"0.0.0.0,2.2.2.2,3.3.3.3,9.9.9.9,10.10.10.10,13.13.13.13",lb,ICTO-0001,f5,pri
-2.2.2.2,"4.4.4.4,5.5.5.5",dmz,ICTO-0001,dap,pri
+1.1.1.1,"0.0.0.0,2.2.2.2,3.3.3.3,9.9.9.9,10.10.10.10",lb,ICTO-0001,f5,pri
+2.2.2.2,"4.4.4.4,5.5.5.5",dmz,ICTO-0001,jap,pri
 3.3.3.3,"4.4.4.4,5.5.5.5",dmz,ICTO-0001,jap,pri
 4.4.4.4,12.12.12.12,app,ICTO-0001,weblogic,pri
 0.0.0.0,"6.6.6.6,7.7.7.7,8.8.8.8",dmz,ICTO-0001,jap,cdc
@@ -12,5 +12,3 @@ ip,connections,zone,cati,version,data_center
 10.10.10.10,11.11.11.11,dmz,ICTO-0001,jap,sin
 11.11.11.11,12.12.12.12,app,ICTO-0001,weblogic,sin
 12.12.12.12,,db,ICTO-0001,oracle,cdc
-13.13.13.13,14.14.14.14,dmz,ICTO-0001,jap,tky
-14.14.14.14,,app,ICTO-0001,weblogic,tky
