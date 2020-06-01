@@ -1,5 +1,3 @@
-import pyyed
-
 class DataCenter:
     def __init__(self, name, global_x_axis):
         self.child_objects = {}

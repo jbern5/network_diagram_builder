@@ -1,25 +1,24 @@
-from v4 import network_test as nx
+import networkx as nx
 import random
-import matplotlib.pyplot as plt
 
 
 def hierarchy_pos(G, root=None, width=1., vert_gap = 0.2, vert_loc = 0, xcenter = 0.5):
 
     '''
-    From Joel's answer at https://stackoverflow.com/a/29597209/2966723.
-    Licensed under Creative Commons Attribution-Share Alike
+    From Joel's answer at https://stackoverflow.com/a/29597209/2966723.  
+    Licensed under Creative Commons Attribution-Share Alike 
 
-    If the graph is a tree this will return the positions to plot this in a
+    If the graph is a tree this will return the positions to plot this in a 
     hierarchical layout.
 
     G: the graph (must be a tree)
 
-    root: the root node of current branch
-    - if the tree is directed and this is not given,
+    root: the root node of current branch 
+    - if the tree is directed and this is not given, 
       the root will be found and used
-    - if the tree is directed and this is given, then
+    - if the tree is directed and this is given, then 
       the positions will be just for the descendants of this node.
-    - if the tree is undirected and not given,
+    - if the tree is undirected and not given, 
       then a random choice will be used.
 
     width: horizontal space allocated for this branch - avoids overlap with other branches
@@ -54,13 +53,13 @@ def hierarchy_pos(G, root=None, width=1., vert_gap = 0.2, vert_loc = 0, xcenter 
             pos[root] = (xcenter, vert_loc)
         children = list(G.neighbors(root))
         if not isinstance(G, nx.DiGraph) and parent is not None:
-            children.remove(parent)
+            children.remove(parent)  
         if len(children)!=0:
-            dx = width/len(children)
+            dx = width/len(children) 
             nextx = xcenter - width/2 - dx/2
             for child in children:
                 nextx += dx
-                pos = _hierarchy_pos(G,child, width = dx, vert_gap = vert_gap,
+                pos = _hierarchy_pos(G,child, width = dx, vert_gap = vert_gap, 
                                     vert_loc = vert_loc-vert_gap, xcenter=nextx,
                                     pos=pos, parent = root)
         return pos
@@ -69,15 +68,28 @@ def hierarchy_pos(G, root=None, width=1., vert_gap = 0.2, vert_loc = 0, xcenter 
     return _hierarchy_pos(G, root, width, vert_gap, vert_loc, xcenter)
 
 
-# import networkx as nx
-G = nx.Graph()
-G.add_edges_from([('1.1.1.1', '2.2.2.2'), ('1.1.1.1', '3.3.3.3'), ('1.1.1.1', '4.4.4.4'), ('2.2.2.2', '5.5.5.5'), ('2.2.2.2','6.6.6.6'), ('2.2.2.2','7.7.7.7'),
-                  ('3.3.3.3','8.8.8.8'), ('3.3.3.3','9.9.9.9'), ('4.4.4.4','10.10.10.10')])
+import matplotlib.pyplot as plt
+import networkx as nx
+import pandas as pd
 
+df = pd.read_csv("net_data.csv")
+df = df[df['cati'] == 'ICTO-0001']
+df = df.sort_values(by='data_center')
 
+connection_list = []
+for index, data in df.iterrows():
+    if str(data['connections']).split(',')[0] != 'nan':
+        for conn in str(data['connections']).split(','):
+                connection_list.append((str(data['ip']), str(conn)))
 
-pos = hierarchy_pos(G,'1.1.1.1')
+for conn in connection_list:
+    print(conn)
+
+G=nx.Graph()
+# G.add_edges_from([(1,2), (1,3), (1,4), (2,5), (2,6), (2,7), (3,8), (3,9), (4,10),
+#                   (5,11), (5,12), (6,13)])
+G.add_edges_from(connection_list)
+pos = hierarchy_pos(G, '1.1.1.1')    
 nx.draw(G, pos=pos, with_labels=True)
-plt.draw()
-plt.show()
 # plt.savefig('hierarchy.png')
+plt.show()

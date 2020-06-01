@@ -1,5 +1,5 @@
 import pandas as pd
-import networkx as nx
+from v4 import network_test as nx
 import matplotlib.pyplot as plt
 import random
 # G.add_edges_from([(1,2), (1,3), (1,4), (2,5), (2,6), (2,7), (3,8), (3,9), (4,10),

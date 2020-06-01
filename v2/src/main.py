@@ -2,6 +2,8 @@ import pyyed
 import pandas as pd
 from data_center import DataCenter
 
+print("Running...")
+
 df = pd.read_csv("net_data.csv")
 df = df[df['cati'] == 'ICTO-0001']
 
@@ -108,6 +110,3 @@ z = g.get_graph()
 graph_file = open("test" + '.graphml', 'w')
 graph_file.write(z)
 graph_file.close()
-#
-#
-# # data center object that takes a list of child node objects
