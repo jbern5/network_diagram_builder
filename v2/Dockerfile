@@ -14,4 +14,4 @@ RUN pip install -r requirements.txt
 COPY src /app
 
 EXPOSE 8080
-CMD [ "python3", "main.py" ]
+ENTRYPOINT [ "python3", "main.py", "ICTO-0001"]
