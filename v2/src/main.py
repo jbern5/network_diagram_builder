@@ -3,8 +3,8 @@ import pandas as pd
 import sys
 from data_center import DataCenter
 
-# cati = sys.argv[1]
-cati = 'ICTO-0001'
+cati = sys.argv[1]
+# cati = 'ICTO-0001'
 # Data wrangling
 df = pd.read_csv("net_data.csv")
 

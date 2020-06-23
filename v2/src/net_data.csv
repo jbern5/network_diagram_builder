@@ -12,7 +12,24 @@ ip,connections,zone,cati,version,data_center
 10.10.10.10,11.11.11.11,dmz,ICTO-0001,jap,sin
 11.11.11.11,,app,ICTO-0001,weblogic,sin
 12.12.12.12,,dmz,ICTO-0001,jap,tky
-13.13.13.13,"14.14.14.14, 15.15.15.15",lb,ICTO-0002,f5,pri
+13.13.13.13,"14.14.14.14,15.15.15.15",lb,ICTO-0002,f5,pri
 14.14.14.14,16.16.16.16,dmz,ICTO-0002,jap,pri
 15.15.15.15,16.16.16.16,dmz,ICTO-0002,jap,pri
 16.16.16.16,,app,ICTO-0002,weblogic,pri
+1.1.1.1,"0.0.0.0,2.2.2.2,3.3.3.3,9.9.9.9,10.10.10.10,12.12.12.12",lb,ICTO-0003,f5,pri
+2.2.2.2,"4.4.4.4,5.5.5.5",dmz,ICTO-0003,jap,pri
+3.3.3.3,"4.4.4.4,5.5.5.5",dmz,ICTO-0003,jap,pri
+4.4.4.4,,app,ICTO-0003,weblogic,pri
+0.0.0.0,"6.6.6.6,7.7.7.7,8.8.8.8",dmz,ICTO-0003,jap,cdc
+5.5.5.5,,app,ICTO-0003,weblogic,pri
+6.6.6.6,,app,ICTO-0003,weblogic,cdc
+7.7.7.7,,app,ICTO-0003,weblogic,cdc
+8.8.8.8,,app,ICTO-0003,weblogic,cdc
+9.9.9.9,"6.6.6.6,7.7.7.7,8.8.8.8",dmz,ICTO-0003,jap,cdc
+10.10.10.10,11.11.11.11,dmz,ICTO-0003,jap,sin
+11.11.11.11,,app,ICTO-0003,weblogic,sin
+12.12.12.12,,dmz,ICTO-0003,jap,tky
+13.13.13.13,"14.14.14.14,15.15.15.15",lb,ICTO-0004,f5,pri
+14.14.14.14,16.16.16.16,dmz,ICTO-0004,jap,pri
+15.15.15.15,16.16.16.16,dmz,ICTO-0004,jap,pri
+16.16.16.16,,app,ICTO-0004,weblogic,pri
