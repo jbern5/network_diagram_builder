@@ -11,7 +11,6 @@ unique_cati = df['cati'].unique()
 for cati in unique_cati:
     print(cati)
     cati_df = df[df['cati'] == cati]
-    # os.system('python3 graph.py {}'.format(cati))
     make_graph(cati_df, cati)
 
 end = time.time()
